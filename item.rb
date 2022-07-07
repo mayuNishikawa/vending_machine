@@ -13,6 +13,22 @@ class Item
     end
   end
 
+  def show(items)
+    items.each_with_index do |item,i|
+      if item.stock != 0
+        puts "【#{i+1}】#{item.name} ¥#{item.price}"
+      end
+    end
+  end
+
+  def show_can_buy(items, slotted_money)
+    items.each_with_index do |item,i|
+      if item.stock != 0 && slotted_money >= item.price
+        puts "【#{i+1}】#{item.name} ¥#{item.price}"
+      end
+    end
+  end
+
   def minus_stock
     @stock -= 1
   end
