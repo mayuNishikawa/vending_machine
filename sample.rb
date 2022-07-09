@@ -9,9 +9,8 @@ class DICStudent
     @name
   end
 
-  def introduce #①public…デフォルト。クラスの外部から制限なしに呼び出すことが出来る。
+  def introduce #①publicだけど、
     "私の名前は#{@name}です。" 
-    where_live_in
     older_than?(other_student)
   end
 
@@ -27,6 +26,3 @@ class DICStudent
     other_student.age < @age
   end
 end
-
-dic_student = DICStudent.new("丸岡", "石川", "18")
-dic_student

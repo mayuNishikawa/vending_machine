@@ -21,12 +21,14 @@ class Item
     end
   end
 
-  def show_can_buy(items, slotted_money)
+  def show_can_buy(items, slotted_money, num)
     items.each_with_index do |item,i|
       if item.stock != 0 && slotted_money >= item.price
         puts "【#{i+1}】#{item.name} ¥#{item.price}"
+        num += 1
       end
     end
+    return num
   end
 
   def minus_stock

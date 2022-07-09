@@ -24,4 +24,8 @@ class Cashier
   def plus_sold_money(price)
     @sales_money += price
   end
+
+  def purchasable?(number, num)
+    (1..num) === number
+  end
 end
