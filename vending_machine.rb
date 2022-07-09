@@ -27,8 +27,7 @@ class VendingMachine
       break if answer.include?("n")
     end
 
-    choose = true
-    while choose
+    while true
       puts "購入可能な商品はこちらです。番号を選択してください。お釣りを返す場合は【999】を選択してください"
       slotted_money = cashier.now
       num = 0
@@ -42,14 +41,12 @@ class VendingMachine
         cashier.plus_sold_money(sold_item.price)
         puts "ｷﾞｬｺｫｫﾝ(ジュースが出る音)"
         puts "お釣りは¥#{cashier.now - sold_item.price}です。"
-        choose = false
-      else
-        choose = true 
+        return
       end
     end
   end
 end
 
-
-
 VendingMachine.start
+
+# 課題要件「格納されているジュースの情報（値段と名前と在庫）を取得できる。」「投入金額、在庫の点で、コーラが購入できるかどうかを取得できる。」は、メソッド定義すべきか
