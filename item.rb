@@ -35,4 +35,3 @@ class Item
     @stock -= 1
   end
 end
-

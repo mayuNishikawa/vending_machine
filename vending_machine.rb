@@ -8,6 +8,7 @@ class VendingMachine
       { name: "コーラ", price: 120 },
       { name: "レッドブル", price: 200 }
     ]
+
     item = ["水", "コーラ", "レッドブル"]
     price = [100, 120, 200]
 
@@ -46,7 +47,3 @@ class VendingMachine
     end
   end
 end
-
-VendingMachine.start
-
-# 課題要件「格納されているジュースの情報（値段と名前と在庫）を取得できる。」「投入金額、在庫の点で、コーラが購入できるかどうかを取得できる。」は、メソッド定義すべきか
