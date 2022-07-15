@@ -29,11 +29,12 @@ class VendingMachine
     end
 
     while true
-      puts "購入可能な商品はこちらです。番号を選択してください。お釣りを返す場合は【999】を選択してください"
       slotted_money = cashier.now
       num = 0
+      puts "購入可能な商品はこちらです。番号を選択してください。お釣りを返す場合は【999】を選択してください"
       num = item.show_can_buy(items, slotted_money, num)
       number = gets.to_i 
+      
       # 購入     
       cashier.repayment and return if number == 999
       if cashier.purchasable?(number, num)
@@ -47,3 +48,5 @@ class VendingMachine
     end
   end
 end
+
+VendingMachine.start
