@@ -21,11 +21,16 @@ class Cashier
     @current_slot_money += slot_money
   end
 
-  def plus_sold_money(price)
-    @sales_money += price
+  def counting(sold_item_price)
+    @sales_money += sold_item_price
+    @current_slot_money = 0
   end
 
   def purchasable?(number, num)
     (1..num) === number
+  end
+
+  def sales_money
+    puts "売上金額: #{@sales_money}"
   end
 end
